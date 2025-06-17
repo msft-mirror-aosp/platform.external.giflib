@@ -44,4 +44,5 @@ cc_library_static {
         "//frameworks/base/libs/hwui",
         "//packages/apps/Messaging/jni",
     ],
+    product_available: true,
 }
