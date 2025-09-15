@@ -7,7 +7,7 @@ description: "A library and utilities for processing GIFs"
 third_party {
   license_type: NOTICE
   security {
-    tag: "NVD-CPE2.3:cpe:/a:giflib_project:giflib:5.1.1"
+    tag: "NVD-CPE2.3:cpe:/a:giflib_project:giflib:5.2.2"
   }
   last_upgrade_date {
     year: 2024
