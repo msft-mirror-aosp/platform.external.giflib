@@ -27,6 +27,7 @@ cc_library_static {
         "gif_err.c",
         "gif_hash.c",
         "quantize.c",
+        "openbsd-reallocarray.c",
     ],
 
     cflags: [
@@ -34,7 +35,15 @@ cc_library_static {
         "-Wno-format",
         "-Wno-sign-compare",
         "-Wno-unused-parameter",
-        "-DHAVE_REALLOCARRAY",
+
+        // The giflib reallocarray() has special behavior for 0 arguments,
+        // so we can't just use the bionic reallocarray() --
+        // at least as long as our realloc() doesn't special case that --
+        // and need to move the bionic reallocarray() polyfill out of the way,
+        // or it will conflict with giflib's attempt to implement its own.
+        "-Dreallocarray=bionic_reallocarray",
+        "-include malloc.h",
+        "-Ureallocarray",
     ],
 
     export_include_dirs: ["."],
