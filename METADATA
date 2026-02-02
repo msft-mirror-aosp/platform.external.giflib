@@ -17,7 +17,7 @@ third_party {
   identifier {
     type: "Git"
     value: "https://git.code.sf.net/p/giflib/code"
-    version: "6e634a500f3f26a387f7d34d2cfdf456d5f5ccd3"
+    version: "7cad0c7f5aaf5723b814549c024cac8c7d735077"
     closest_version: "5.2.2"
   }
 }
