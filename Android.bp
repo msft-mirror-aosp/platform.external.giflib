@@ -18,6 +18,8 @@ license {
 cc_library_static {
     name: "libgif",
 
+    host_supported: true,
+
     sdk_version: "9",
 
     srcs: [
@@ -54,4 +56,10 @@ cc_library_static {
         "//packages/apps/Messaging/jni",
     ],
     product_available: true,
+
+    target: {
+        windows: {
+            enabled: true,
+        },
+    },
 }
